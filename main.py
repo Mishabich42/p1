@@ -1,1 +1,3 @@
-print("Hallo world")
+user = "NickTsib"
+n = ""
+print in(f"")
