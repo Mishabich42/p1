@@ -20,6 +20,12 @@ class Student:
         self.gladness += 3
         self.food -= 10
         self.water -= 10
+    def to_sport(self):
+        print("time to sport")
+        self.gladness -= 3
+        self.food -= 20
+        self.water -= 20
+        self.health += 70
     def to_chill(self):
         print("time to chill")
         food = input("1-Home 2-Restaurant 3-disco\n");
@@ -103,7 +109,7 @@ class Student:
     def live(self, day):
         day = "Day" + str(day) +"of" + self.name +"life"
         print(f"{day:=^50}")
-        life_cube = input("1-studi 2-sleep\n3-chill 4-eat\n5-drink 6-work\n");
+        life_cube = input("1-studi 2-sleep\n3-chill 4-eat\n5-drink 6-work\n7-sport\n");
         if life_cube == "1":
             self.to_studi()
         elif life_cube == "2":
@@ -116,9 +122,11 @@ class Student:
             self.to_drink()
         elif life_cube == '6':
             self.to_job()
+        elif life_cube == '7':
+            self.to_sport()
         self.end_of_day()
         self.is_alive()
-name = Student(name= input("Enter your name"))
+name = Student(name= input("Enter your name "))
 for day in range(365):
     if name.alive == False:
         break
