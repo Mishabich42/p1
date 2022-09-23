@@ -9,7 +9,7 @@ class Enemy:
         self.mana = 1
         self.alive = True
 class Chargaret:
-    def __init__(self, name):
+    def __init__(self, name, Enemy=None):
         self.Enemy = Enemy
         self.Hp = 1
         self.Gold = 1
@@ -179,6 +179,7 @@ class Chargaret:
         print(f"{day:=^50}")
         self.Choice()
         self.EChoice()
+        self.stats()
         life_cube = input("1-Attack 2-Restoration\n")
         if life_cube == "1":
             self.Attack()
@@ -192,12 +193,11 @@ class Chargaret:
         if self.mana < 0:
             self.Hp -= 100
             self.mana += 50
-        self.stats()
-        self.is_alive()
+        if self.Enemy.mana < 0:
+            self.Enemy.Hp -= 100
+            self.Enemy.mana += 50
 name = Chargaret(name=input("What you name "))
 for day in range(1,355):
-    if name.alive == False:
-        break
     name.live(day)
 
 
