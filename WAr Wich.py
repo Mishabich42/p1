@@ -198,6 +198,8 @@ class Chargaret:
             self.Enemy.mana += 50
 name = Chargaret(name=input("What you name "))
 for day in range(1,355):
+    if name.alive == False:
+        break
     name.live(day)
 
 
