@@ -7,6 +7,7 @@ class Human:
         self.satiety = 50
         self.job = job
         self.car = car
+        self.cat = Cat
         self.home = home
     def get_home(self):
         self.home = House()
@@ -122,7 +123,7 @@ class Human:
             self.get_job()
             print(f"I don't have a job, I'm going to get a job {self.job.job} with salary {self.job.salary}")
         self.days_indexes(day)
-        dice = random.randint(1, 4)
+        choice = input("")
         if self.satiety < 20:
             print("I'll go eat")
             self.eat()
@@ -139,16 +140,16 @@ class Human:
         elif self.car.strength < 15:
             print("I need to repair my car")
             self.to_repair()
-        elif dice == 1:
+        elif choice == 1:
             print("Let`s chill!")
             self.chill()
-        elif dice == 2:
+        elif choice == 2:
             print("Start working")
             self.work()
-        elif dice == 3:
+        elif choice == 3:
             print("Cleaning time!")
             self.clean_home()
-        elif dice == 4:
+        elif choice == 4:
             print("Time for treats!")
             self.shopping(manage="delicacies")
 brands_of_car = {
@@ -175,6 +176,12 @@ class House:
     def __init__(self):
         self.mess = 0
         self.food = 0
+
+class Cat:
+    def __init__(self):
+        self.satiety = 100
+        self.water = 100
+        self.happiness = 100
 job_list = {
     "Java developer":{"salary":50, "gladness_less": 10 },
     "Python developer":{"salary":40, "gladness_less": 3 },
