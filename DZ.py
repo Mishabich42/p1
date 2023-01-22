@@ -1,7 +1,7 @@
 import random
 nam = input("What you name ")
 class Human:
-    health = 0
+    health = 1
     strong = 0
     name = nam
 class Danua(Human):
