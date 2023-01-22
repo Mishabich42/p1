@@ -9,8 +9,9 @@ class Enemy:
         self.mana = 1
         self.alive = True
 class Chargaret:
-    def __init__(self, name, Enemy=None):
+    def __init__(self, name, Enemy=None, Day=None):
         self.Enemy = Enemy
+        self.Day = Day
         self.Hp = 1
         self.Gold = 1
         self.name = name
@@ -20,6 +21,12 @@ class Chargaret:
         self.mana = 1
         self.alive = True
         self.clas = ""
+class Day:
+    alive = None
+
+    def __init__(self, Chargaret=None, Enemy=None):
+        self.Enemy = Enemy
+        self.Chargaret = Chargaret
     def Choice(self):
         self.clas = input("Change you class\n1-Tank 2-Assasin\n3-Warrior 4-Mage\n")
         if self.clas == "1":
@@ -100,7 +107,7 @@ class Chargaret:
             if atak == "2":
                 dice = random.randint(1, random.randint(2,10))
                 if dice == 1:
-                    self.name.Hp -= self.CritDMG
+                    self.Chargaret.Hp -= self.CritDMG
                 self.Enemy.Hp -= 100
     def EAttack(self):
         tak = random.randint(1, 2)
@@ -162,7 +169,7 @@ class Chargaret:
             self.Enemy.alive = False
     def stats(self):
         print("          ")
-        print(f"Name = {self.name}")
+        print(f"Name = {self.Chargaret.name}")
         print(f"HP = {self.Hp}")
         print(f"FDM = {self.DMG}")
         print(f"Mana = {self.mana}")
@@ -175,7 +182,7 @@ class Chargaret:
         print(f"Crit = {self.Enemy.CritDMG}")
         print("          ")
     def live(self, day):
-        day = "Round" + str(day) +"of" + self.name +"life"
+        day = "Round" + str(day) +"of" + self.Chargaret.name +"life"
         print(f"{day:=^50}")
         self.Choice()
         self.EChoice()
@@ -196,11 +203,10 @@ class Chargaret:
         if self.Enemy.mana < 0:
             self.Enemy.Hp -= 100
             self.Enemy.mana += 50
-name = Chargaret(name=input("What you name "))
 for day in range(1,355):
-    if name.alive == False:
+    if Day.alive == False:
         break
-    name.live(day)
+    Day.live(day)
 
 
 
