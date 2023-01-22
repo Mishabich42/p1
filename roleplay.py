@@ -58,19 +58,10 @@ class Student:
             self.health += 40
     def to_drink(self):
         print("time to drink")
-        drinks = input("1-Kola 2-Pepsi 3-Mineral water\n");
-        if drinks == "1":
-            self.water += 30
-            self.money -= 50
-            self.health -= 40
-        elif drinks == "2":
-            self.water += 40
-            self.money -= 200
-            self.health -= 20
-        elif drinks == '3':
-            self.water += 60
-            self.money -= 400
-            self.health += 40
+        self.water += 30
+        self.money -= 50
+        self.health -= 40
+
     def to_job(self):
         print("time to work")
         self.gladness -= 10
