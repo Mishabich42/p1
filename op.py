@@ -1,29 +1,31 @@
-import random
 result = []
 
 
 def divider(a, b):
     try:
-        a = random.randint(1, 10)
-        b = random.randint(1, 10)
-        if int(a) < int(b):
+        if a < b:
             raise ValueError
-        if int(b) > 100:
+        if b > 100:
             raise IndexError
-        return a
-    except ValueError:
-        print("?")
-    except IndexError:
-        print("?")
+    except:
+        return None
     finally:
         pass
+    return a / b
 
 
 data = {10: 2, 2: 5, "123": 4, 18: 0, (): 15, 8: 4}
 
-
 for key in data:
-    res = divider(key, data[key])
-    result.append(res)
-
+    try:
+        res = divider(key, data[key])
+        result.append(res)
+    except ValueError:
+        print("ValueError")
+    except IndexError:
+        print("IndexError")
+    except ZeroDivisionError:
+        print('Zero')
+    finally:
+        pass
 print(result)
