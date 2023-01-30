@@ -25,7 +25,7 @@ for key in data:
     except IndexError:
         print("IndexError")
     except ZeroDivisionError:
-        print('Zero')
+        print('ZeroError')
     finally:
         pass
 print(result)
