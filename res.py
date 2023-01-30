@@ -1,7 +1,7 @@
 import colorama
 # вимикає згортання
 colorama.init(wrap=False)
-# автоскидання кольору, колір заднього плану, яскравість тексту
+# автоскидання кольору, колір заднього плану, яскравість текст
 colorama.init(autoreset=True)
 # колір тексту
 print(colorama.Fore.MAGENTA + 'some MAGENTA text')
