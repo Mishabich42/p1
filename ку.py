@@ -1,6 +1,6 @@
 # Task 1
 """"
-my_iterable = iter([i for i in range(10000000000000000000000)])
+my_iterable = iter([i for i in range(1000)])
 
 for item in my_iterable:
     print(next(my_iterable))
