@@ -1,4 +1,3 @@
-
 import random as r
 from datetime import datetime
 
@@ -22,4 +21,3 @@ def second_function():
     First_function()
     end_time = datetime.now()
     print('Duration: {}'.format(end_time - start_time))
-
